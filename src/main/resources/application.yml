@@ -1,0 +1,3 @@
+server:
+  sessionTimeout: 30
+  port: 99
