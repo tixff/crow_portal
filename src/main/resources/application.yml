@@ -1,3 +1,8 @@
 server:
   sessionTimeout: 30
-  port: 99
+  port: 90
+
+spring:
+  data:
+    solr:
+      host: http://localhost:99/solr/crowd_core
