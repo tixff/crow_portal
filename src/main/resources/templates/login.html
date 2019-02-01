@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>用户登录</title>
+    <meta name="keywords" content="苏宁易购"/>
+    <meta name="description" content="苏宁易购"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="https://ssl.suning.com/favicon.ico" type="image/x-icon">
+    <script type="text/javascript">
+        var sn = sn || {};
+        //全局变量
+        var sn_domain = "http://www.suning.com";
+        var server_prefix_domain = "https://ssl.suning.com/emall/";
+        var srs_prefix_domain = "https://reg.suning.com/";
+        var asc_prefix_domain = "https://aq.suning.com/asc/";
+        var passport_domain = "https://passport.suning.com";
+        var sop_prefix_domain = "https://sopssl.suning.com/";
+        var goUrl = "http://www.suning.com/";
+        var dt_Siller_Url = "https://dt.suning.com/detect/dt/dragDetect.json";
+
+        var loginPBK = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQComqoAyvbCqO1EGsADwfNTWFQIUbm8CLdeb9TgjGLcz95mAo204SqTYdSEUxFsOnPfROOTxhkhfjbRxBV4/xjS06Y+kkUdiMGFtABIxRQHQIh0LrVvEZQs4NrixxcPI+b1bpE0gO/GAFSNWm9ejhZGj7UnqiHphnSJAVQNz2lgowIDAQAB";
+
+        var companycard_url = srs_prefix_domain + "companycardshow.do";
+        //人工审核地址
+        var asc_selfService_URL = asc_prefix_domain + "selfService/show.do";
+        //登录建议URL
+        var loginAdvise_Url = "http://ued.suning.com/survey/express/d29va1Nr";
+        //下载易购appURL
+        var downLoadApp_Url = "http://sale.suning.com/syb/20120419xsjkhd/index.html";
+        //忘记密码
+        var forgetPwd_URL = asc_prefix_domain + "forgetpsw.do";
+        //会员卡连接地址
+        var memberCard_URL = srs_prefix_domain + "b2cMemberCard/offline/cardLogin.do";
+
+        var autoLoginCookie_expireDay = 30;
+    </script>
+    <!-- 引入全站公用资源文件 -->
+    <link rel="stylesheet" type="text/css" href="https://res.suning.cn/project/passport/login/b2c_V7/css/??v3common.min.css,login.min.css?v=1541648459319"/>
+
+
+    <script type="text/javascript" src="https://res.suning.cn/javascript/sn_da/da_opt.js"></script>
+    <!-- 设备人机埋点 -->
+    <script type="text/javascript" src="https://mmds.suning.com/mmds/mmds.js?appCode=qEmt9X4YmoV2Vye8"></script>
+</head>
+<!--[if lt IE 7 ]>
+<body class="ie ie6"><![endif]-->
+<!--[if IE 7 ]>
+<body class="ie ie7"><![endif]-->
+<!--[if IE 8 ]>
+<body class="ie ie8"><![endif]-->
+<!--[if IE 9 ]>
+<body class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body><!--<![endif]-->
+<div class="header">
+    <a href="http://www.suning.com" class="logo"></a>
+    <div style="margin-left:189px;padding:37px 0 0 16px;*zoom:1">
+        <div style="margin-right:-100px;*zoom:1">
+        </div>
+    </div>
+
+</div>
+<!--pagename埋点 start-->
+<input type="hidden" id="pagename" value="pgcate=10009;pgtitle=登录页">
+<!--pagename埋点 end-->
+<div class="main" sap-modid="oKx8J" style="background:url(https://image.suning.cn/uimg/cms/img/154884162883402552.jpg) center no-repeat;">
+    <div class="login-c">
+        <a href="https://cuxiao.suning.com/nhjbf1zn.html" target="_blank" class="single-link" name="Logon_index_denglu005"></a>
+        <div class="login-form">
+            <div class="login-tab" style="text-align: center;vertical-align: center">
+                <br/>
+                <span style="color: #ff7700;font-size: x-large;margin-top: initial">账户登录</span>
+            </div>
+            <div class="pc-login" style="display: block">
+                <form id="loginForm">
+                    <div class="username-login">
+
+                        <div class="username-box">
+                            <div class="input-box" id="showErrorUsernameDiv">
+                                <input id="name" name="name" type="text" autocomplete="off" value="" tabindex="1" maxlength="64">
+                                <label>用户名</label>
+                                <i class="icon username-icon"></i>
+                                <i class="clear"></i>
+                            </div>
+                            <div class="email-list hide"></div>
+                        </div>
+                        <div class="password-box">
+                            <div class="input-box" id="showErrorPwdDiv">
+                                <input id="password" name="password" type="password" autocomplete="off" tabindex="2">
+                                <label>密码</label>
+                                <i class="icon password-icon"></i>
+                                <i class="clear"></i>
+                            </div>
+                        </div>
+                        <div id="Logon_index_denglu039" class="siller-box sillerVerifyCode" style="display:none;margin-bottom:20px;">
+                            <div id="siller1"></div>
+                        </div>
+
+                        <div class="siller-box sillerVerifyCode" id="iarUsername">
+                            <div id="iar1"></div>
+                        </div>
+
+                        <div class="login-help clearfix">
+                            <a id="FORGET_PWD" href="javascript:void(0);" onclick="javascript:forgetPwdClick(); return false;" name="Logon_index_denglu001" class="forget-password">忘记密码？</a>
+
+                        </div>
+                        <a id="login"  name="Logon_index_denglu002" class="login-submit">登 录</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="free-reg">
+                <a id="FREE_TO_REG" href="javascript:void(0);" name="Logon_index_denglu003" onclick="javascript:freeToRegClick(); return false;">注册</a>
+            </div>
+            <div class="login-switch" name="Logon_index_denglu018"></div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<script type="text/html" class="send-voice-success">
+    <div class="send-voice-success-dialog">
+        <div class="dialing"></div>
+        <p class="tell">稍后苏宁客服将电话与您联系，告知验证码～</p>
+        <a name="Logon_index_denglu036" href="javascript:void(0)" class="button close">确 定</a>
+    </div>
+</script>
+<script type="text/javascript" src="https://res.suning.cn/public/v3/js/jquery.js"></script>
+<script type="text/javascript" src="https://dt.suning.com/detect/dt/siller.js"></script>
+<script type="text/javascript" src="https://res.suning.cn/project/passport/login/b2c_V7/js/??SFE.lion.dialog.min.js,security.min.js,login.min.js?v=20181018"></script>
+<script type="text/javascript" src="https://res.suning.cn/project/asc/style/js/loginProtectVerifyPop-min.js?v=20170224"></script>
+<script src="https://iar-web.suning.com/iar-web/snstatic/SnCaptcha.js"></script>
+
+
+<script type="text/javascript">
+    var sa = sa || {};
+    sa.bid = "106";
+</script>
+<script type="text/javascript" src="https://res.suning.cn/javascript/??sn_da/sa-analytics.js,sn_da/sa-functions.js,sn_da/sa_simple.js,sn_pf/agent_js/performance_agent.js?v=20150528"></script>
+
+
+<script type="text/javascript" src="https://fp.suning.com/bennu-collector/fp/porto.js"></script>
+
+<script type="text/javascript" src="https://dfp.suning.com/dfprs-collect/dist/fp.js?appCode=qEmt9X4YmoV2Vye8"></script>
+<script type="text/javascript">
+    function getDfpToken() {
+        dfpToken = _dfp.getToken();
+        return dfpToken;
+    }
+</script>
+<script>
+    $("#login").click(function () {
+        var str = /^[^\s]+$/;
+        if (!str.test($("#password").val())) {
+            alert("手机格式错误，请重新输入");
+            return;
+        }
+        if (!str.test($("#name").val())) {
+            alert("用户名不能有空白字符");
+            return;
+        }
+        var data = $("#loginForm").serialize();
+        $.ajax({
+            type: 'post',
+            url: '/user/login',
+            cache: false,
+            data: data,  //重点必须为一个变量如：data
+            dataType: 'json',
+            success: function (resultData) {
+                if ("200" == resultData.status) {
+                    alert(resultData.message);
+                    window.location.href="http://localhost:90";
+                } else {
+                    alert(resultData.message);
+                }
+            },
+            error: function () {
+                alert("请求失败")
+            }
+        });
+    });
+</script>
+</body>
+</html>

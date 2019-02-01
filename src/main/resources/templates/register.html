@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>苏宁易购-苏宁云商网上商城，领先的综合网上购物商城，正品行货，全国联保，货到付款，让您尽享购物乐趣！</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="苏宁易购"/>
+    <meta name="description" content="苏宁易购是领先的综合网上购物商城, 在线特价销售家电、通讯数码、电脑、家居百货、服装服饰、母婴、图书、食品、保险、旅行、充值、团购等数万类商品和服务。正品行货, 全国联保, 本地配送, 货到付款。省钱放心上苏宁电器网上商城, 尽享购物乐趣！"/>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="autoclick" content="true">
+    <meta name="siteid" content="d488778a">
+    <meta name="pageid" content="uzD">
+    <link rel="shortcut icon" href="http://www.suning.com/favicon.ico" type="image/x-icon"/>
+    <!-- 引入全站公用资源文件 -->
+
+    <link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="//res.suning.cn/public/v3/css/??v3common.min.css,search.min.css,sn-sidebar.min.css?v=2019011601"/>
+    <script type="text/javascript"
+            src="//res.suning.cn??/public/v3/js/jquery.js,/public/v3/js/sn_lazyload.js,/public/v3/js/lazyelem.min.js,/public/v3/js/SFE.base.min.js,/public/v3/js/search.min.js,/public/sidebar/build/js/sn-sidebar.min.js,/project/yunxin/js/chatCompat_mini.js?v=2019011601"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <meta content="true" name="autoclick">
+    <meta content="d488778a" name="siteid">
+
+    <!--[if IE 6]>
+    <script type="text/javascript" src="//res.suning.cn/public/js/DD_belatedPNG.js"></script>
+    <![endif]-->
+    <input type='hidden' id='baseUrl' value=''/>
+    <script type="text/javascript">
+        //全局变量
+        var sn = sn || {
+            "context": "/emall",
+            "domain": "www.suning.com",
+            "storeId": "10052",
+            "catalogId": "10051",
+            "memberDomain": "",
+            "sslDomain": "",
+            "imgssl": "res.suning.cn",
+            "online": "online.suning.com",
+            "cookieDomain": ".suning.com",
+            "categoryId": "0",
+            "searchDomain": "http://search.suning.com/emall/"
+        };
+
+        //跳转到passport登录
+        /*
+        *url 登录成功后跳转 目标 URL
+        *logonType  passport 的登录皮肤
+        *  b2c 主站      默认值
+        *  sop 苏宁云商
+        */
+
+        function logonUrl(url, logonType, userVal) {
+            if (url == "" || typeof(url) == "undefined") {
+                url = "http://www.suning.com";
+            }
+            if (logonType == "" || typeof(logonType) == "undefined") {
+                logonType = "b2c";
+            }
+            var targetUrl = encodeURIComponent(url);
+            var logonurl = "https://passport.suning.com/ids/login?service="
+                + encodeURIComponent("https://reg.suning.com/auth?targetUrl=" + targetUrl)
+                + "&method=GET&loginTheme=" + logonType;
+            if ("" != userVal && "undefined" != typeof(userVal)) {
+                logonurl = logonurl + "&username=" + userVal;
+            }
+            hrefLink(logonurl);
+        }
+
+        function forgetPassword() {
+            var url = "https://aq.suning.com/asc/forgetpsw.do";
+            window.location = url;
+        }
+
+        function regUrl() {
+            var url = "https://reg.suning.com/person.do";
+            window.location = url;
+        }
+
+        function hrefLink(e) {
+            if (navigator.userAgent.indexOf("Firefox") > 0) {
+                window.location = e
+            } else {
+                var f = document.createElement("a");
+                f.href = e;
+                document.body.appendChild(f);
+                if (/msie/i.test(navigator.userAgent.toLowerCase())) {
+                    f.click()
+                } else {
+                    var d = document.createEvent("MouseEvent");
+                    d.initEvent("click", false, false);
+                    f.dispatchEvent(d)
+                }
+            }
+        };
+
+    </script>
+
+    <!-- 引入项目资源文件 -->
+    <link rel="stylesheet" type="text/css" href="https://res.suning.cn/project/srsregister/css/v2/siller-min.css?v=201901280149"/>
+    <link rel="stylesheet" type="text/css" href="https://res.suning.cn/project/srsregister/css/v2/style-person-reg-new-min.css?v=201901280149"/>
+
+    <script type="text/javascript" src="https://dfp.suning.com/dfprs-collect/dist/fp.js?v=201901280149&appCode=sSBPSduMXbsBS0Ra"></script>
+    <script type="text/javascript" src="https://mmds.suning.com/mmds/mmds.js?v=201901280149&appCode=sSBPSduMXbsBS0Ra"></script>
+</head>
+<!--[if lt IE 7 ]>
+<body class="ie ie6"><![endif]-->
+<!--[if IE 7 ]>
+<body class="ie ie7"><![endif]-->
+<!--[if IE 8 ]>
+<body class="ie ie8"><![endif]-->
+<!--[if IE 9 ]>
+<body class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body><!--<![endif]-->
+<div class="header clearfix" sap-modid="RZ7FT">
+    <a href="javascript:logonUrl('','','');" class="login" name="Preg_index_none_log">我已经注册，马上登录&gt;</a>
+    <a href="//www.suning.com" class="logo"></a>
+    <div class="logo-txt">欢迎注册</div>
+</div>
+<!--pagename埋点 start-->
+<input type="hidden" id="pagename" value="pgcate=10009;pgtitle=个人会员注册页">
+<!--pagename埋点  end-->
+<div class="main">
+    <form id="grapReg_form" action="/identification.do" method="post" autocomplete="off">
+        <input type="hidden" id="token" name="token" value="b85d3004-ebf0-47d6-bc8b-deeb7a1afb2a"/>
+        <input type="hidden" id="regPage" name="regPage" value="NORMAL_REG_PAGE"/>
+        <input type="hidden" id="alias" name="aliasName" maxlength="11"/>
+        <input type="hidden" id="random" name="random"/>
+        <input type="hidden" id="uid" name="uid"/>
+        <input type="hidden" id="iCode" name="iCode" value=""/>
+    </form>
+    <form id="register" action="/user/register" method="post" autocomplete="off">
+        <div class="reg-form" sap-modid="RZ7FT">
+            <div class="phone-field">
+                <div class="input-box clearfix">
+                    <label class="title">用户名</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="name" name="name" maxlength="11">
+                        <label class="placeholder">请输入用户名</label>
+                        <i class="ok"></i>
+                    </div>
+                </div>
+                <div id="aliasTip" class="error-msg hide"></div>
+            </div>
+            <div class="phone-field">
+                <div class="input-box clearfix">
+                    <label class="title">手机号</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="phone" name="phone" maxlength="11">
+                        <label class="placeholder">请输入手机号</label>
+                        <i class="ok"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="siller-field hide" id="imgCodeDiv">
+                <div id="siller"></div>
+                <input type="hidden" id="imgCode" name="imgCode" value=""/>
+                <script type="text/javascript">
+                    var isEnableSiller = true;
+                </script>
+            </div>
+            <div class="error-msg hide" id="imgCodeTip"></div>
+            <div class="password-field">
+                <div class="input-box clearfix" style="margin-bottom:0;">
+                    <label class="title">设置密码</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" maxlength="20" class="encrypt">
+                        <i class="eye eye-plain"></i>
+                        <input type="text" id="setPswPlain" name="setPswPlain" maxlength="20" class="plain" >
+                        <i class="eye eye-encrypt"></i>
+                        <i class="ok"></i>
+                        <label class="placeholder">请输入密码</label>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:void(0)" id="save" onclick="setDfpMmdsValue()" class="submit-btn" name="Preg_index_none_submit">提交注册</a>
+        </div>
+    </form>
+</div>
+
+<!--注册表单提交-->
+<script>
+    $("#save").click(function () {
+        var phone = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
+        var str = /^[^\s]+$/;
+        if (!phone.test($("#phone").val())) {
+            alert("手机格式错误，请重新输入");
+            return;
+        }
+        if (!str.test($("#name").val())) {
+            alert("用户名不能有空白字符");
+            return;
+        }
+        var data = $("#register").serialize();
+        $.ajax({
+            type: 'post',
+            url: '/user/register',
+            cache: false,
+            data: data,  //重点必须为一个变量如：data
+            dataType: 'json',
+            success: function (resultData) {
+                if ("200" == resultData.status) {
+                    alert(resultData.message);
+                    window.location.href="http://localhost:90/login";
+                } else {
+                    alert(resultData.message);
+                }
+            },
+            error: function () {
+                alert("请求失败")
+            }
+        });
+    });
+</script>
+<!-- 此处引入公用尾部 -->
+<div class="clear"></div>
+
+<!--top fix bar [[-->
+<div class="ng-fix-bar"></div>
+<!--top fix bar ]]-->
+</div>
+<style type="text/css">
+    .ng-footer {
+        height: 200px;
+        margin-top: 0;
+    }
+
+    .ng-s-footer {
+        height: 185px;
+        background: none;
+        text-align: center;
+    }
+
+    .ng-s-footer p.ng-url-list {
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .ng-s-footer p.ng-url-list a {
+        color: #666666;
+    }
+
+    .ng-s-footer p.ng-url-list a:hover {
+        color: #f60;
+    }
+
+    .ng-s-footer .ng-authentication {
+        float: none;
+        margin: 0 auto;
+        height: 25px;
+        width: 990px;
+        margin-top: 5px;
+    }
+
+    .ng-s-footer p.ng-copyright {
+        float: none;
+        width: 100%;
+    }
+
+    .root1200 .ng-s-footer p.ng-copyright {
+        width: 100%;
+    }
+</style>
+<script type="text/html" class="send-voice-success">
+    <div class="send-voice-success-dialog">
+        <div class="dialing"></div>
+        <p class="tell">稍后苏宁将拨打电话给您，告知验证码</p>
+        <a href="javascript:void(0)" class="button close" name="Preg_index_none_Tensure">确 定</a>
+    </div>
+</script>
+<script type="text/javascript">
+    var sa = sa || {};
+    sa.bid = "106";
+</script>
+
+<script type="text/javascript" src="https://fp.suning.com/bennu-collector/fp/porto.js?v=201901280149"></script>
+<script type="text/javascript" src="https://dt.suning.com/detect/dt/siller.js?v=201901280149"></script>
+<script type="text/javascript" src="https://res.suning.cn/javascript/sn_da/??sa-analytics.js,da_opt.js,sa-functions.js?v=201901280149"></script>
+<script type="text/javascript"
+        src="https://res.suning.cn/project/srsregister/js/??v2/SFE.lion.dialog-min.js,v2/srs-common-min.js,v2/srs-validate-new-min.js,v2/perRegNew-min.js,password-min.js,pclogErrorInfo-min.js?v=201901280149"></script>
+<!-- 埋点js -->
+<script type="text/javascript" src="https://res.suning.cn/javascript/sn_da/??sa-analytics.js,sa-functions.js?v=201901280149"></script>
+<!--pclog引入的js start-->
+<script type="text/javascript" src="https://res.suning.cn/project/srsregister/js/pclogErrorInfo-min.js?v=201901280149"></script>
+<!--pclog引入的js end-->
+<script type="text/javascript" src="https://res.suning.cn/project/srsregister/js/da_opt_inc-min.js?v=201901280149"></script>
+
+
+<script>
+    var url_pclog = pc_pclogprefix + "person.do";//pclog接口名称
+    $(function () {
+
+        if (typeof(yfb) != "undefined") {
+            yfb.account();
+        }
+
+        if (typeof(porto) != "undefined") {
+            porto.init({
+                partnerCode: 'none',
+                appName: 'commerce',
+                referenceId: '123',
+                sessionId: '123',
+                serviceUrl: "https://fp.suning.com/bennu-collector/fp/porto.json"
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
