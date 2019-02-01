@@ -84,9 +84,9 @@ public class ItemSearchServiceImpl implements ItemSearchService {
                 item.setId(id);
                 item.setName((String) result.get("name"));
                 List<String> highList = highlight.get(result.get("id")).get("short_title");
-                if(highList!=null&&highList.size()>0){
+                if (highList != null && highList.size() > 0) {
                     item.setShortTitle(highList.get(0));
-                }else {
+                } else {
                     item.setShortTitle((String) result.get("short_title"));
                 }
                 item.setFinancingDays(Integer.valueOf((String) result.get("financing_days")));
@@ -102,14 +102,82 @@ public class ItemSearchServiceImpl implements ItemSearchService {
             pageResult.setTotalCount((int) numFound);
             pageResult.setData(items);
             long totalPage = (numFound % query.getRows()) > 0 ? numFound / query.getRows() + 1 : numFound / query.getRows();
-            pageResult.setTotalPage((int)totalPage);
+            pageResult.setTotalPage((int) totalPage);
             pageResult.setData(items);
             return pageResult;
         } catch (Exception e) {
             e.printStackTrace();
-            logger.error("查询出错：{}",e.getStackTrace());
+            logger.error("查询出错：{}", e.getStackTrace());
         }
 
         return null;
+    }
+
+    @Override
+    public Item searchItemById(Integer id) {
+        SolrQuery params = new SolrQuery();
+        //查询条件, 这里的 q 对应 下面图片标红的地方
+        params.set("q", id);
+        //默认域
+        params.set("df", "id");
+        try {
+            QueryResponse queryResponse = client.query(params);
+            SolrDocumentList results = queryResponse.getResults();
+            Item item = new Item();
+            for (SolrDocument document : results) {
+                Integer itemId = Integer.valueOf((String) document.get("id"));
+                String name = (String) document.get("name");
+                item.setId(itemId);
+                item.setName(name);
+                item.setShortTitle((String) document.get("short_title"));
+                item.setFinancingDays(Integer.valueOf((String) document.get("financing_days")));
+                item.setImage((String) document.get("image"));
+                item.setCreateTime(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse((String) document.get("create_time")));
+                item.setContributeNum(Integer.valueOf((String) document.get("contribute_num")));
+                item.setCurrentMoney(Double.valueOf((String) document.get("current_money")));
+                item.setRaiseMoney(Double.valueOf((String) document.get("raise_money")));
+                item.setIntro((String) document.get("intro"));
+            }
+            return item;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public ArrayList<Item> searchHotItem() {
+        ArrayList<Item> itemList = new ArrayList<>();
+        SolrQuery params = new SolrQuery();
+        //查询条件, 这里的 q 对应 下面图片标红的地方
+        params.set("q", "*:*");
+        //默认域
+        params.set("df", "short_title");
+        //排序
+        params.addSort("contribute_num", SolrQuery.ORDER.desc);
+        params.setStart(0);
+        params.setRows(4);
+        try {
+            QueryResponse queryResponse = client.query(params);
+            SolrDocumentList results = queryResponse.getResults();
+            for (SolrDocument document : results) {
+                Item item = new Item();
+                Integer itemId = Integer.valueOf((String) document.get("id"));
+                String name = (String) document.get("name");
+                item.setId(itemId);
+                item.setName(name);
+                item.setShortTitle((String) document.get("short_title"));
+                item.setFinancingDays(Integer.valueOf((String) document.get("financing_days")));
+                item.setImage((String) document.get("image"));
+                item.setCreateTime(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse((String) document.get("create_time")));
+                item.setContributeNum(Integer.valueOf((String) document.get("contribute_num")));
+                item.setCurrentMoney(Double.valueOf((String) document.get("current_money")));
+                item.setRaiseMoney(Double.valueOf((String) document.get("raise_money")));
+                item.setIntro((String) document.get("intro"));
+                itemList.add(item);
+            }
+            return itemList;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
