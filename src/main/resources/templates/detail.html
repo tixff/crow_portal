@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
@@ -6,17 +5,19 @@
     <title th:text="${item.name}"></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <link rel="shortcut icon" href="//resjrprd.suning.com/finance/public/v1/style/images/favicon.ico" type="image/x-icon"/><link rel="stylesheet" type="text/css" href="//resjrprd.suning.com/finance/public/v1/style/css/fin_common.css?v=20161001"/>
-    <link rel="stylesheet" type="text/css" href="//zc.suning.com/webstatic/style/css/common.css?v=1545310905742" />
+    <link rel="shortcut icon" href="/static/title.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="//resjrprd.suning.com/finance/public/v1/style/css/fin_common.css?v=20161001"/>
+    <link rel="stylesheet" type="text/css" href="//zc.suning.com/webstatic/style/css/common.css?v=1545310905742"/>
     <script>
         var ctx = '//zc.suning.com/webstatic/';
         var context = '';
         var staticVersion = 'v=1545310905742';
         var imgUrl = '//image.suning.cn/'
         var finConfig = {
-            focusIndex:'zhch'
+            focusIndex: 'zhch'
         };
     </script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="https://res.suning.cn/project/passport/js/passport.min.js?v=1545310905742"></script>
     <script>
         var passport_config = {
@@ -27,16 +28,234 @@
     <link href="//sale.suning.com/images/advertise/hg/20111027snhear/css.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="/static/title.jpg" type="image/x-icon">
     <script src="//res.suning.cn/public/v3/js/jquery.js?201500730"></script>
-    <script type="text/javascript">var sn = sn || { "context": "/emall","domain": "www.suning.com","storeId": "10052","catalogId": "10051","memberDomain": "member.suning.com","online": "online.suning.com","cookieDomain": ".suning.com","categoryId": "10051","searchDomain": 'http://search.cnsuning.com/emall/',"hasSidebar": false};</script>
+    <script type="text/javascript">var sn = sn || {
+        "context": "/emall",
+        "domain": "www.suning.com",
+        "storeId": "10052",
+        "catalogId": "10051",
+        "memberDomain": "member.suning.com",
+        "online": "online.suning.com",
+        "cookieDomain": ".suning.com",
+        "categoryId": "10051",
+        "searchDomain": 'http://search.cnsuning.com/emall/',
+        "hasSidebar": false
+    };</script>
     <!-- PRFLS RESOURCES -->
     <link rel="shortcut icon" href="/static/title.jpg" type="image/x-icon"/>
     <link rel="stylesheet" href="//res.suning.cn/public/v3/css/??v3common.min.css,search.min.css,sn-sidebar.min.css?v=2017103101"/>
-    <script type="text/javascript" src="//res.suning.cn??/public/v3/js/jquery.js,/public/v3/js/sn_lazyload.js,/public/v3/js/lazyelem.min.js,/public/v3/js/SFE.base.min.js,/public/v3/js/search.min.js,/public/sidebar/build/js/sn-sidebar.min.js,/project/yunxin/js/chatCompat_mini.js?v=2017103101"></script>
+    <script type="text/javascript"
+            src="//res.suning.cn??/public/v3/js/jquery.js,/public/v3/js/sn_lazyload.js,/public/v3/js/lazyelem.min.js,/public/v3/js/SFE.base.min.js,/public/v3/js/search.min.js,/public/sidebar/build/js/sn-sidebar.min.js,/project/yunxin/js/chatCompat_mini.js?v=2017103101"></script>
     <script>
-        var sa;if(!sa){sa={}}if(!sa.click){sa.click={}}(function(){var u=/^\w*?.suning.com$/,t=document.location.hostname,h=(("https:"==document.location.protocol)?"https://":"http://"),p=i(),b="|",c=location.href,n=m(q(c));function r(aa,N){try{var Z=aa.name?m(aa.name):"name undefined";if(Z=="name undefined"){var ab=aa.attributes.name;if(ab!=undefined&&ab!=null){Z=ab.value?m(ab.value):"name undefined"}}if(N!=undefined&&N!=null&&N!=""){var K=aa.attributes[N];if(K!=undefined&&K!=null){Z=K.value?m(K.value):N+" undefined"}}var O=aa.id?m(aa.id):"id undefined",R=new Array(),A=(f(aa,R),R)?m(R.join("").replace(/\s|\|/ig,"")):"text undefined",U=(U=document.getElementById("resourceType"))?U.value:"",B=O+b+Z+b+A,S=(S=document.getElementById("errorCode"))?S.value:"",X=h+p+"/ajaxClick.gif",z=v(),k="_snck";l(k,z,"/","","");var Y=d();var E=typeof sn=="object"?sn.cityId:"can not get cityId",J=z+b+Y+b+B+b+n,W=aa.href?aa.href:"",I=(W?x(W):"-"),L=document.getElementById("URLPattern"),Q=(L?L.value:"");var D="";var G=o("logonStatus");if(G!=undefined&&G!=null){D=G}var F="";var j=o("_snma");if(j!=undefined&&j!=null&&j.indexOf("|")>=0){try{F=j.split("|")[1]}catch(V){}}var C="";var y=o("idsLoginUserIdLastTime");if(y!=undefined&&y!=null){C=y}var T="";var P=o("custno");if(P!=undefined&&P!=null){T=P}var M="";var ac=o("_snmb");if(ac!=undefined&&ac!=null&&ac.indexOf("|")>=0){try{M=ac.split("|")[0]}catch(V){}}var H=X+"?_snmk="+J+"&_snme="+S+"&_type="+U+"&_cId="+E+"&_sid="+I+"&urlPattern="+Q+"&vid="+F+"&lu="+C+"&sid="+M+"&mid="+T+"&ls="+D;w(H)}catch(V){}}function d(){if(!sa.pvId){sa.pvId=v()}return sa.pvId}function v(){try{var k=new Date(),j=Math.round(100000*Math.random()),z=k.getTime().toString().concat(j);return z}catch(y){}}function o(k){var j=document.cookie.split("; ");for(var y=0;y<j.length;y++){var z=j[y].split("=");if(z[0]==k){return unescape(z[1])}}}function w(j){var y="log_"+(new Date()).getTime();var k=window[y]=new Image();k.onload=(k.onerror=function(){window[y]=null});k.src=j+"&iId="+y;k=null}function i(){if(u.test(t)){return"click.suning.cn/sa"}else{return"clicksit.suning.cn/sa"}}function e(){return document.domain}function l(k,j,D,C,B){try{var A=k+"="+escape(j);if(C!=""){var z=new Date();z.setTime(z.getTime()+C);A+=";expires="+z.toGMTString()}if(D!=""){A+=";path="+D}var y=e();if(y.indexOf(".suning.com")!=-1){A+=";domain=.suning.com"}else{if(y.indexOf(".cnsuning.com")!=-1){A+=";domain=.cnsuning.com"}else{A+=";domain="+B}}document.cookie=A}catch(B){}}function x(k){var j="-";if(!a(k)){j=g(k,"tid","&")}return j}function q(j){try{if(j.length>301){j=j.substring(0,300)}while(j.indexOf(b)!=-1){j=j.replace(b,"--")}return j}catch(k){}}function f(z,k){try{if(z.nodeType==3){k.push(z.nodeValue)}else{if(z.nodeType==1){for(var j=z.firstChild;j!=null;j=j.nextSibling){f(j,k)}}}}catch(y){}}function m(j){return j!=null?encodeURIComponent(j):""}function g(y,k,B){try{var A="-",j;if(!a(y)&&!a(k)&&!a(B)){j=y.indexOf(k);if(j>-1){var z=y.indexOf(B,j);if(z<0){z=y.length}A=y.substring(j+k.length+1,z)}}return A}catch(z){}}function a(j){return(undefined==j||""==j||"-"==j)}var s=sa.click;s.sendDatasIndex=r})();
+        var sa;
+        if (!sa) {
+            sa = {}
+        }
+        if (!sa.click) {
+            sa.click = {}
+        }
+        (function () {
+            var u = /^\w*?.suning.com$/, t = document.location.hostname, h = (("https:" == document.location.protocol) ? "https://" : "http://"), p = i(), b = "|", c = location.href, n = m(q(c));
+
+            function r(aa, N) {
+                try {
+                    var Z = aa.name ? m(aa.name) : "name undefined";
+                    if (Z == "name undefined") {
+                        var ab = aa.attributes.name;
+                        if (ab != undefined && ab != null) {
+                            Z = ab.value ? m(ab.value) : "name undefined"
+                        }
+                    }
+                    if (N != undefined && N != null && N != "") {
+                        var K = aa.attributes[N];
+                        if (K != undefined && K != null) {
+                            Z = K.value ? m(K.value) : N + " undefined"
+                        }
+                    }
+                    var O = aa.id ? m(aa.id) : "id undefined", R = new Array(), A = (f(aa, R), R) ? m(R.join("").replace(/\s|\|/ig, "")) : "text undefined",
+                        U = (U = document.getElementById("resourceType")) ? U.value : "", B = O + b + Z + b + A, S = (S = document.getElementById("errorCode")) ? S.value : "",
+                        X = h + p + "/ajaxClick.gif", z = v(), k = "_snck";
+                    l(k, z, "/", "", "");
+                    var Y = d();
+                    var E = typeof sn == "object" ? sn.cityId : "can not get cityId", J = z + b + Y + b + B + b + n, W = aa.href ? aa.href : "", I = (W ? x(W) : "-"),
+                        L = document.getElementById("URLPattern"), Q = (L ? L.value : "");
+                    var D = "";
+                    var G = o("logonStatus");
+                    if (G != undefined && G != null) {
+                        D = G
+                    }
+                    var F = "";
+                    var j = o("_snma");
+                    if (j != undefined && j != null && j.indexOf("|") >= 0) {
+                        try {
+                            F = j.split("|")[1]
+                        } catch (V) {
+                        }
+                    }
+                    var C = "";
+                    var y = o("idsLoginUserIdLastTime");
+                    if (y != undefined && y != null) {
+                        C = y
+                    }
+                    var T = "";
+                    var P = o("custno");
+                    if (P != undefined && P != null) {
+                        T = P
+                    }
+                    var M = "";
+                    var ac = o("_snmb");
+                    if (ac != undefined && ac != null && ac.indexOf("|") >= 0) {
+                        try {
+                            M = ac.split("|")[0]
+                        } catch (V) {
+                        }
+                    }
+                    var H = X + "?_snmk=" + J + "&_snme=" + S + "&_type=" + U + "&_cId=" + E + "&_sid=" + I + "&urlPattern=" + Q + "&vid=" + F + "&lu=" + C + "&sid=" + M + "&mid=" + T + "&ls=" + D;
+                    w(H)
+                } catch (V) {
+                }
+            }
+
+            function d() {
+                if (!sa.pvId) {
+                    sa.pvId = v()
+                }
+                return sa.pvId
+            }
+
+            function v() {
+                try {
+                    var k = new Date(), j = Math.round(100000 * Math.random()), z = k.getTime().toString().concat(j);
+                    return z
+                } catch (y) {
+                }
+            }
+
+            function o(k) {
+                var j = document.cookie.split("; ");
+                for (var y = 0; y < j.length; y++) {
+                    var z = j[y].split("=");
+                    if (z[0] == k) {
+                        return unescape(z[1])
+                    }
+                }
+            }
+
+            function w(j) {
+                var y = "log_" + (new Date()).getTime();
+                var k = window[y] = new Image();
+                k.onload = (k.onerror = function () {
+                    window[y] = null
+                });
+                k.src = j + "&iId=" + y;
+                k = null
+            }
+
+            function i() {
+                if (u.test(t)) {
+                    return "click.suning.cn/sa"
+                } else {
+                    return "clicksit.suning.cn/sa"
+                }
+            }
+
+            function e() {
+                return document.domain
+            }
+
+            function l(k, j, D, C, B) {
+                try {
+                    var A = k + "=" + escape(j);
+                    if (C != "") {
+                        var z = new Date();
+                        z.setTime(z.getTime() + C);
+                        A += ";expires=" + z.toGMTString()
+                    }
+                    if (D != "") {
+                        A += ";path=" + D
+                    }
+                    var y = e();
+                    if (y.indexOf(".suning.com") != -1) {
+                        A += ";domain=.suning.com"
+                    } else {
+                        if (y.indexOf(".cnsuning.com") != -1) {
+                            A += ";domain=.cnsuning.com"
+                        } else {
+                            A += ";domain=" + B
+                        }
+                    }
+                    document.cookie = A
+                } catch (B) {
+                }
+            }
+
+            function x(k) {
+                var j = "-";
+                if (!a(k)) {
+                    j = g(k, "tid", "&")
+                }
+                return j
+            }
+
+            function q(j) {
+                try {
+                    if (j.length > 301) {
+                        j = j.substring(0, 300)
+                    }
+                    while (j.indexOf(b) != -1) {
+                        j = j.replace(b, "--")
+                    }
+                    return j
+                } catch (k) {
+                }
+            }
+
+            function f(z, k) {
+                try {
+                    if (z.nodeType == 3) {
+                        k.push(z.nodeValue)
+                    } else {
+                        if (z.nodeType == 1) {
+                            for (var j = z.firstChild; j != null; j = j.nextSibling) {
+                                f(j, k)
+                            }
+                        }
+                    }
+                } catch (y) {
+                }
+            }
+
+            function m(j) {
+                return j != null ? encodeURIComponent(j) : ""
+            }
+
+            function g(y, k, B) {
+                try {
+                    var A = "-", j;
+                    if (!a(y) && !a(k) && !a(B)) {
+                        j = y.indexOf(k);
+                        if (j > -1) {
+                            var z = y.indexOf(B, j);
+                            if (z < 0) {
+                                z = y.length
+                            }
+                            A = y.substring(j + k.length + 1, z)
+                        }
+                    }
+                    return A
+                } catch (z) {
+                }
+            }
+
+            function a(j) {
+                return (undefined == j || "" == j || "-" == j)
+            }
+
+            var s = sa.click;
+            s.sendDatasIndex = r
+        })();
     </script>
     <style>
-        *{
+        * {
             -webkit-box-sizing: initial;
             -moz-box-sizing: initial;
             box-sizing: initial;
@@ -50,17 +269,17 @@
     <!--分转元-->
     <script type="text/javascript">
         var share = {
-            title : "#\u591A\u529F\u80FD\u78E8\u6D46\u673A#",
-            description : "\u201C \u719F\u6089\u7684\u5473\u9053\uFF0C\u78E8\u51FA\u7684\u60C5\u6000\u201D\uFF1B\u8BA9\u5473\u857E\u7A7F\u68AD\u56DE\u5230\u8FC7\u53BB\uFF0C\u8BA9\u77F3\u78E8\u6587\u5316\u4F20\u627F\u53D1\u626C\u3002——苏宁众筹！",
-            url : "https://zc.suning.com/project/detail.htm?projectId=22107",
-            wapUrl : "https://zc.m.suning.com/project/detail.htm?projectId=22107",
-            isType : "01",
+            title: "#\u591A\u529F\u80FD\u78E8\u6D46\u673A#",
+            description: "\u201C \u719F\u6089\u7684\u5473\u9053\uFF0C\u78E8\u51FA\u7684\u60C5\u6000\u201D\uFF1B\u8BA9\u5473\u857E\u7A7F\u68AD\u56DE\u5230\u8FC7\u53BB\uFF0C\u8BA9\u77F3\u78E8\u6587\u5316\u4F20\u627F\u53D1\u626C\u3002——苏宁众筹！",
+            url: "https://zc.suning.com/project/detail.htm?projectId=22107",
+            wapUrl: "https://zc.m.suning.com/project/detail.htm?projectId=22107",
+            isType: "01",
             picurl: "//image.suning.cn/uimg/cfs/project/154829511630060173.jpg",
             detail: "\u201C \u719F\u6089\u7684\u5473\u9053\uFF0C\u78E8\u51FA\u7684\u60C5\u6000\u201D\uFF1B\u8BA9\u5473\u857E\u7A7F\u68AD\u56DE\u5230\u8FC7\u53BB\uFF0C\u8BA9\u77F3\u78E8\u6587\u5316\u4F20\u627F\u53D1\u626C\u3002"
         };
     </script>
     <style>
-        .fin-index-color{
+        .fin-index-color {
             color: #F18D00;
             /*font-weight: bold;*/
             /*border-bottom: 3px solid #F18D00;*/
@@ -93,8 +312,8 @@
                 <em class="hasmsg ng-iconfont"></em>
             </a>
             <div class="ng-bar-node reg-bar-node" id="reg-bar-node" style="display: none;">
-                <a href="/login" id="user"  rel="nofollow"
-                   class="login" >请登录</a>
+                <a href="/login" id="user" rel="nofollow"
+                   class="login">请登录</a>
 
                 <a href="/user/loginout" target="_blank" class="login reg-bbb" rel="nofollow"
                    name="public0_none_denglu_zhuce">退出登录</a>
@@ -151,12 +370,12 @@
     $(function () {
         var strcookie = document.cookie;//获取cookie字符串
         var arrcookie = strcookie.split(";");//分割
-        var name="user";
+        var name = "user";
         for (var i = 0; i < arrcookie.length; i++) {
             var arr = arrcookie[i].split("=");
-            if (arr[0].trim()== name) {
-                $("#user").text("欢迎您，"+arr[1]);
-                $("#user").attr("href","");
+            if (arr[0].trim() == name) {
+                $("#user").text("欢迎您，" + arr[1]);
+                $("#user").attr("href", "");
             }
         }
     });
@@ -170,7 +389,7 @@
     bodyClassName = bodyClassName ? bodyClassName + " " : "";
     if (screen.width >= 1200) {
         bodyTag.className = bodyClassName + "root1200";
-    } else{
+    } else {
         bodyTag.className = bodyClassName + "root990";
     }
 
@@ -199,24 +418,25 @@
     </div>
 </div>
 <style>
-    .fin-nav-list a{
-        color:#222;
+    .fin-nav-list a {
+        color: #222;
     }
-    .fin-nav-list a:hover{
-        color:#f70;
+
+    .fin-nav-list a:hover {
+        color: #f70;
     }
 </style>
 <!--外网段-->
 
 
-<input id="isBandType" type="hidden" name="isBandType" value="false" /><!--用以区分品牌筹和众筹支持事件-->
-<input id="seeAndseeDiv" type="hidden" name="seeAndseeDiv" value="1" />
-<input id="focusType" type="hidden" name="focusType" value="1" />
-<input id="focusFlag" type="hidden" name="focusFlag" value="" />
+<input id="isBandType" type="hidden" name="isBandType" value="false"/><!--用以区分品牌筹和众筹支持事件-->
+<input id="seeAndseeDiv" type="hidden" name="seeAndseeDiv" value="1"/>
+<input id="focusType" type="hidden" name="focusType" value="1"/>
+<input id="focusFlag" type="hidden" name="focusFlag" value=""/>
 <input id="projectId" type="hidden" name="projectId" value="22107"/>
 <input id="attribute" type="hidden" name="attribute" value="01"/>
 <input id="webServerIP" type="hidden" name="webServerIP" value="//zc.suning.com"/>
-<input id="secret" type="hidden" name="secret" value="" />
+<input id="secret" type="hidden" name="secret" value=""/>
 <div class="wrap">
     <div class="item-detail">
         <div class="item-detail-left">
@@ -277,20 +497,28 @@
                 </div>
 
 
-
-
                 <div class="item-process">
 
                     <div class="process-bar" th:style="'width:'+${item.currentMoney/item.raiseMoney}*100+'%'">
 
-                    </div></div>
-
-
+                    </div>
+                </div>
 
                 <div class="item-begin-time" data-days="30" th:text="'剩余'+${item.financingDays}+'天'">
                 </div>
                 <div class="item-actor-num">已有<strong th:text="${item.contributeNum}"></strong>人支持该项目</div>
-                <a href="javascript:;" class="detail-support-btn" name="zc_detail_support_01">立即支持</a>
+                <a th:href="'/item/order?itemId='+${item.id}"
+                    style="display: inline-block;
+                    height: 52px;
+                    width: 310px;
+                    background-color:red;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #fff!important;
+                    text-decoration: none;
+                    text-align: center;
+                    line-height: 52px;
+                    margin-top: 10px;">立即支持</a>
             </div>
 
         </div>
@@ -322,14 +550,46 @@
     <!--top fix bar ]]-->
 </div>
 <style type="text/css">
-    .ng-footer{height:200px;margin-top:0;}
-    .ng-s-footer{height:185px;background:none;text-align:center;}
-    .ng-s-footer p.ng-url-list{height:25px;line-height:25px;}
-    .ng-s-footer p.ng-url-list a{color:#666666;}
-    .ng-s-footer p.ng-url-list a:hover{color:#f60;}
-    .ng-s-footer .ng-authentication{float:none;margin:0 auto;height:25px;width:990px;margin-top:5px;}
-    .ng-s-footer p.ng-copyright{float:none;width:100%;}
-    .root1200 .ng-s-footer p.ng-copyright{width:100%;}
+    .ng-footer {
+        height: 200px;
+        margin-top: 0;
+    }
+
+    .ng-s-footer {
+        height: 185px;
+        background: none;
+        text-align: center;
+    }
+
+    .ng-s-footer p.ng-url-list {
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .ng-s-footer p.ng-url-list a {
+        color: #666666;
+    }
+
+    .ng-s-footer p.ng-url-list a:hover {
+        color: #f60;
+    }
+
+    .ng-s-footer .ng-authentication {
+        float: none;
+        margin: 0 auto;
+        height: 25px;
+        width: 990px;
+        margin-top: 5px;
+    }
+
+    .ng-s-footer p.ng-copyright {
+        float: none;
+        width: 100%;
+    }
+
+    .root1200 .ng-s-footer p.ng-copyright {
+        width: 100%;
+    }
 </style>
 <script data-main="//zc.suning.com/webstatic/scripts/front/detailMain.js?v=1545310905742" src="//zc.suning.com/webstatic/scripts/lib/require/require.min.js"></script>
 <!--<script type="text/javascript" src="//resjrprd.suning.com/finance/public/v1/scripts/lib/jquery/jquery.1.7.2.js?v=20161001"></script><script type="text/javascript" src="//resjrprd.suning.com/finance/public/v1/scripts/lib/common/common.js?v=20161001"></script><script type="text/javascript" src="//res.suning.cn/project/yunxin/js/chatCompat_mini.js?v=20161001"></script>-->
@@ -394,7 +654,7 @@
                     </p>
                     <p>预计发放时间：项目筹款成功后的30天内</p>
                     <a class="detail-small-btn" href="javascript:;" data-id="79549">支 持</a>
-                    <img width="145" height="145" src="//image.suning.cn/uimg/cfs/project/154829563918986378.jpg" alt="多功能磨浆机"  class="fl">
+                    <img width="145" height="145" src="//image.suning.cn/uimg/cfs/project/154829563918986378.jpg" alt="多功能磨浆机" class="fl">
                     <p class="f14">感谢您的支持，众筹成功后，您将以698元的抢购价获得参考价为998元的多功能磨浆机一台。</p>
                 </dd>
             </dl>
@@ -413,7 +673,7 @@
                     </p>
                     <p>预计发放时间：项目筹款成功后的30天内</p>
                     <a class="detail-small-btn" href="javascript:;" data-id="79550">支 持</a>
-                    <img width="145" height="145" src="//image.suning.cn/uimg/cfs/project/154829567376256486.jpg" alt="多功能磨浆机"  class="fl">
+                    <img width="145" height="145" src="//image.suning.cn/uimg/cfs/project/154829567376256486.jpg" alt="多功能磨浆机" class="fl">
                     <p class="f14">感谢您的支持，众筹成功后，您将以758元的优惠价获得参考价为998元的多功能磨浆机一台。</p>
                 </dd>
             </dl>
@@ -432,7 +692,7 @@
                     </p>
                     <p>预计发放时间：项目筹款成功后的30天内</p>
                     <a class="detail-small-btn" href="javascript:;" data-id="79551">支 持</a>
-                    <img width="145" height="145" src="//image.suning.cn/uimg/cfs/project/154829569194497452.jpg" alt="多功能磨浆机"  class="fl">
+                    <img width="145" height="145" src="//image.suning.cn/uimg/cfs/project/154829569194497452.jpg" alt="多功能磨浆机" class="fl">
                     <p class="f14">感谢您的支持，众筹成功后，您将以1480元的优惠价获得参考价为1996元的多功能磨浆机两台。</p>
                 </dd>
             </dl>
@@ -451,7 +711,7 @@
                     </p>
                     <p>预计发放时间：项目筹款成功后的30天内</p>
                     <a class="detail-small-btn" href="javascript:;" data-id="79552">支 持</a>
-                    <img width="145" height="145" src="//image.suning.cn/uimg/cfs/project/154829571226456623.jpg" alt="多功能磨浆机"  class="fl">
+                    <img width="145" height="145" src="//image.suning.cn/uimg/cfs/project/154829571226456623.jpg" alt="多功能磨浆机" class="fl">
                     <p class="f14">感谢您的支持，众筹成功后，您将以3598元的优惠价获得参考价为4990元的多功能磨浆机五台。</p>
                 </dd>
             </dl>
@@ -468,7 +728,8 @@
             <p class="f12">您可以实名认证后支持此项目。</p>
         </div>
         <div class="btn-box">
-            <a class="detail-small-btn mr20" href="https://passport.suning.com/ids/trustLogin?sysCode=epp&targetUrl=https://scsi.suning.com/csi-portal/authNew/real-cer-auth!beginAuth.action?extBackUrl=//zc.suning.com/project/detail.htm?projectId=22107">认证并支持</a>
+            <a class="detail-small-btn mr20"
+               href="https://passport.suning.com/ids/trustLogin?sysCode=epp&targetUrl=https://scsi.suning.com/csi-portal/authNew/real-cer-auth!beginAuth.action?extBackUrl=//zc.suning.com/project/detail.htm?projectId=22107">认证并支持</a>
             <a class="detail-small-btn detail-small-btn-white  hide-pop" href="javascript:;">取 消</a>
         </div>
     </div>
@@ -485,14 +746,14 @@
     </div>
 </script>
 <!-- 风险评估 -->
-<script  type="text/html" id="risk-tpl">
+<script type="text/html" id="risk-tpl">
     <div class="popBox" id="pop-risk-confirm">
         <a href="javascript:;" class="colse-pop hide-pop"></a>
         <div class="notice">
             <p>{{text}}</p>
         </div>
         <div class="btn-box">
-            <a class="detail-small-btn mr20" href="/investmentRisk/questions.htm?projectId=22107" >立即测评</a>
+            <a class="detail-small-btn mr20" href="/investmentRisk/questions.htm?projectId=22107">立即测评</a>
             <a class="detail-small-btn detail-small-btn-white  hide-pop" href="javascript:;">取 消</a>
         </div>
     </div>
@@ -503,7 +764,7 @@
     {{each list as value i}}
     <li class="border-b-dash">
         <p>
-            <img src="{{value.headUrl}}"class="avatar-small" width="40px" height="40px" alt="头像"/>
+            <img src="{{value.headUrl}}" class="avatar-small" width="40px" height="40px" alt="头像"/>
             <span class="nickname">{{value.userName}}</span>
             <span class="ml15 c999 f12">{{value.createdTime}}</span>
         </p>
@@ -571,7 +832,7 @@
     </div>
     {{/each}}
 </script>
-<script  type="text/html" id="detaList-tpl">
+<script type="text/html" id="detaList-tpl">
     {{each data as item i}}
     <li class="border-b-dash">
         <p>
@@ -583,16 +844,16 @@
     </li>
     {{/each}}
 </script>
-<script  type="text/html" id="tip-tpl">
+<script type="text/html" id="tip-tpl">
     <div class="popBox" id="tip-cannot">
         <p>很抱歉，此项目仅限众筹新用户且易付宝实名绑卡用户，您不符合活动规则。</p>
         <a class="ok-btn" href="javascript:;">确 定</a>
     </div>
 </script>
-<script  type="text/html" id="tip-bind-tpl">
+<script type="text/html" id="tip-bind-tpl">
     <div class="popBox" id="tip-cannot">
         <p>先完成易付宝实名绑卡认证，才有参与机会哟～</p>
-        <a class="ok-btn" href="javascript:;" >去实名</a>
+        <a class="ok-btn" href="javascript:;">去实名</a>
     </div>
 </script>
 </body>

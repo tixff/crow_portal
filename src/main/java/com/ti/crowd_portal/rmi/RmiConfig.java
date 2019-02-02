@@ -2,6 +2,7 @@ package com.ti.crowd_portal.rmi;
 
 import com.ti.crowd_portal.service.AdvertiseService;
 import com.ti.crowd_portal.service.ItemDetailService;
+import com.ti.crowd_portal.service.ItemService;
 import com.ti.crowd_portal.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +36,14 @@ public class RmiConfig {
         RmiProxyFactoryBean factoryBean = new RmiProxyFactoryBean();
         factoryBean.setServiceUrl("rmi://localhost/itemDetailService");
         factoryBean.setServiceInterface(ItemDetailService.class);
+        return factoryBean;
+    }
+
+    @Bean
+    public RmiProxyFactoryBean itemService() {
+        RmiProxyFactoryBean factoryBean = new RmiProxyFactoryBean();
+        factoryBean.setServiceUrl("rmi://localhost/itemService");
+        factoryBean.setServiceInterface(ItemService.class);
         return factoryBean;
     }
 }

@@ -137,6 +137,7 @@ public class ItemSearchServiceImpl implements ItemSearchService {
                 item.setCurrentMoney(Double.valueOf((String) document.get("current_money")));
                 item.setRaiseMoney(Double.valueOf((String) document.get("raise_money")));
                 item.setIntro((String) document.get("intro"));
+                item.setLinkmanName((String) document.get("linkman_name"));
             }
             return item;
         } catch (Exception e) {
