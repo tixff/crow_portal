@@ -488,7 +488,7 @@
 </span>
                 </div>
                 <div class="item-target">
-                    <strong class="fr" th:text="${item.currentMoney/item.raiseMoney}*100+'%'">
+                    <strong class="fr" th:text="${(item.currentMoney/item.raiseMoney*100).intValue()}+'%'">
                     </strong>
                     <span class="fr">达成：</span>
                     <span>目标金额：</span>
@@ -499,7 +499,7 @@
 
                 <div class="item-process">
 
-                    <div class="process-bar" th:style="'width:'+${item.currentMoney/item.raiseMoney}*100+'%'">
+                    <div class="process-bar" th:style="'width:'+${(item.currentMoney/item.raiseMoney*100).intValue()}+'%'">
 
                     </div>
                 </div>

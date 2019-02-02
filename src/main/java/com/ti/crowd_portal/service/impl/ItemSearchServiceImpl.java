@@ -9,6 +9,7 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.common.SolrInputDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@ public class ItemSearchServiceImpl implements ItemSearchService {
     private Logger logger = LoggerFactory.getLogger(ItemSearchServiceImpl.class);
     @Autowired
     private SolrClient client;
+
 
     @Override
     public PageResult<Item> searchItemByItemTitle(PageQuery query) {
@@ -179,6 +181,29 @@ public class ItemSearchServiceImpl implements ItemSearchService {
             return itemList;
         } catch (Exception e) {
             return null;
+        }
+    }
+
+    @Override
+    public void addItem(Item item) {
+        final SolrInputDocument doc = new SolrInputDocument();
+        doc.addField("id", item.getId());
+        doc.addField("name", item.getName());
+        doc.addField("intro", item.getIntro());
+        doc.addField("short_title", item.getShortTitle());
+        doc.addField("create_time", item.getCreateTimeStr());
+        doc.addField("linkman_introduction", item.getLinkmanIntroduction());
+        doc.addField("linkman_name", item.getLinkmanName());
+        doc.addField("image", item.getImage());
+        doc.addField("current_money", item.getCurrentMoney());
+        doc.addField("raise_money", item.getRaiseMoney());
+        doc.addField("financing_days", item.getFinancingDays());
+        doc.addField("contribute_num", item.getContributeNum());
+        try {
+            client.add(doc);
+            client.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

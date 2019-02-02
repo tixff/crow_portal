@@ -531,7 +531,7 @@
                     </div>
                     <div class="clear"></div>
                     <div class="item-num">
-                        <span class="fr item-finish"><em>达成</em> <strong th:text="${item.currentMoney/item.raiseMoney}*100+'%'"></strong></span>
+                        <span class="fr item-finish"><em>达成</em> <strong th:text="${(item.currentMoney/item.raiseMoney*100).intValue()}+'%'"></strong></span>
                         <span><em>已筹集</em> <strong th:text="'&yen'+${item.currentMoney}"></strong></span>
                     </div>
                 </div>

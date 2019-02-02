@@ -37,8 +37,9 @@ public class ItemController {
     @ResponseBody
     public ResultData pay(Item item) {
         ResultData resultData = ResultData.createResultData();
-        int status = itemService.updateItemCurrentMoneyAndContibuteNum(item);
-        if(status==1){
+        Item updateItem = itemService.updateItemCurrentMoneyAndContibuteNum(item);
+        if(updateItem!=null){
+            searchService.addItem(updateItem);
             resultData.setMessage("支付成功");
         }else {
             resultData.setMessage("支付失败");

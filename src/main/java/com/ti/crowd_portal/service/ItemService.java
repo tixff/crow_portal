@@ -4,5 +4,5 @@ import com.ti.crowd_manager.domain.Item;
 
 public interface ItemService {
 
-    int updateItemCurrentMoneyAndContibuteNum(Item item);
+    Item updateItemCurrentMoneyAndContibuteNum(Item item);
 }

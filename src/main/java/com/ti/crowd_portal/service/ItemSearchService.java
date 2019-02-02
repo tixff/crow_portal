@@ -13,4 +13,6 @@ public interface ItemSearchService {
     Item searchItemById(Integer id);
 
     ArrayList<Item> searchHotItem();
+
+    void addItem(Item item);
 }
