@@ -26,7 +26,7 @@ public class ItemSearchController {
 
     @PostMapping
     public String search(Model model, PageQuery query) {
-        if (StringUtils.isBlank(query.getQuery())) {
+        if (StringUtils.isBlank(query.getQuery())||"请输入关键字".equals(query.getQuery())) {
             query.setQuery("*:*");
         }
         PageResult<Item> pageResult = searchService.searchItemByItemTitle(query);
